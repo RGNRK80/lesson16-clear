@@ -8,7 +8,7 @@ public interface UserRepository {
 
     User getUserById(long id);
 
-    User getUserByFullName(String fullName);
+    User[] getUserByFullName(String fullName);
 
     User removeUserById(long id);
 

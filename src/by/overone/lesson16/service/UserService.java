@@ -8,4 +8,5 @@ public interface UserService {
 
     User removeUserById(long id);
     User getUserById(long id);
+    User[] getUserByFullName(String fullName);
 }

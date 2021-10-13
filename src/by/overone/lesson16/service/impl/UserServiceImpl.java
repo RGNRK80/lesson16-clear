@@ -32,4 +32,9 @@ public class UserServiceImpl implements UserService {
         } else {return new User();}
 
     }
+
+    @Override
+    public User[] getUserByFullName(String fullName) {
+        return userRepository.getUserByFullName(fullName);
+    }
 }

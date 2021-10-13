@@ -6,18 +6,15 @@ public class UserWrapper {
     public static User stringToUser(String userStr) {
         User user = new User();
         String[] properties = userStr.split(", ");
-
         for (String str : properties) {
-
             String prop = str.substring(0, str.indexOf(" "));
-
             switch (prop) {
                 case "id:":
                     long id = Long.parseLong(str.substring(4));
                     user.setId(id);
                     break;
                 case "name:":
-                    String name = str.substring(6);
+                    String name = str.substring(6);  /// правка
                     user.setName(name);
                     break;
                 case "surname:":
@@ -36,4 +33,15 @@ public class UserWrapper {
         }
         return user;
     }
+    public static User stringToFIO(String userStr) {
+        String[] userFIO=new String[2];
+        User user = new User();
+        userFIO=userStr.split(" ");
+        user.setName(userFIO[0]);
+        user.setSurname(userFIO[1]);
+        System.out.println(" проверка " + user);
+        return user;
+    }
+
+
 }
