@@ -2,9 +2,11 @@ package by.overone.lesson16;
 
 public class DB {
     public static String[] users;
+    public static long id=11;
 
     static {
-        users = new String[10];
+
+        users = new String[11];
         users[0] = "id: 1, name: Ivan, surname: Ivanov, age: 34, phoneNumber: +123456781212";
         users[1] = "id: 2, name: Igor, surname: Iganov, age: 12, phoneNumber: +123456321212";
         users[2] = "id: 3, name: Irina, surname: Ichkina, age: 18, phoneNumber: +123126781212";
@@ -15,5 +17,6 @@ public class DB {
         users[7] = "id: 8, name: Kirill, surname: Ivanov, age: 27, phoneNumber: +123236781212";
         users[8] = "id: 9, name: Ivan, surname: Kirkorov, age: 15, phoneNumber: +123456561212";
         users[9] = "id: 10, name: Kate, surname: Katovalova, age: 21, phoneNumber: +121167821212";
+        users[10] = "id: 11, name: Kate, surname: Katovalova, age: 51, phoneNumber: +129967821299";
     }
 }

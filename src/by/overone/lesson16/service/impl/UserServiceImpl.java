@@ -30,6 +30,26 @@ public class UserServiceImpl implements UserService {
         if (userRepository.getUserById(id)!=null) {
             return userRepository.getUserById(id);
         } else {return new User();}
+    }
 
+    @Override
+    public User[] getUserByFullName(String fullName) {
+        String rezult=fullName.trim();
+        return userRepository.getUserByFullName(rezult);
+    }
+
+    @Override
+    public User addUser(User user) {
+        User[] arrayOfUsers=getAllUsers();
+        for (User userCheck: arrayOfUsers) {
+            if (userCheck.getName().equals(user.getName()) && userCheck.getSurname().equals(user.getSurname())
+                    && userCheck.getAge()== user.getAge() && userCheck.getPhoneNumber().equals(user.getPhoneNumber()) )
+            {
+                System.out.println("user is exist");
+                return null;
+            }
+        }
+        userRepository.addUser(user);
+        return user;
     }
 }

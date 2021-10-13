@@ -5,8 +5,6 @@ import by.overone.lesson16.entity.User;
 import by.overone.lesson16.repository.UserRepository;
 import by.overone.lesson16.utils.UserWrapper;
 
-import java.util.Arrays;
-
 
 public class UserRepositoryArrayImpl implements UserRepository {
     @Override
@@ -31,9 +29,33 @@ public class UserRepositoryArrayImpl implements UserRepository {
     }
 
     @Override
-    public User getUserByFullName(String fullName) {
-        return null;
+    public User[] getUserByFullName(String fullName) {
+        User[] users = new User[DB.users.length];
+        User userToFind=UserWrapper.stringToFIO(fullName);
+
+        int counter=0;
+        for (int i = 0; i < users.length; i++) {
+            User user = UserWrapper.stringToUser(DB.users[i]);
+            if (user.getName().equals(userToFind.getName()) && user.getSurname().equals(userToFind.getSurname())) {counter+=1;}
+            }
+
+        User[] rezult=null;
+        if (counter>0) {
+            rezult=new User[counter];
+            int k=0;
+            for (int i = 0; i < users.length; i++) {
+                User user = UserWrapper.stringToUser(DB.users[i]);
+                if (user.getName().equals(userToFind.getName()) && user.getSurname().equals(userToFind.getSurname())) {
+                    rezult[k]=user;
+                k++;
+                }
+
+            }
+        }
+        return rezult;
     }
+
+
 
     @Override
     public User removeUserById(long id) {
@@ -47,7 +69,7 @@ public class UserRepositoryArrayImpl implements UserRepository {
             }
             removed=DB.users[i];
             j--;
-          //  break;
+
         }
         DB.users = users;
         return UserWrapper.stringToUser(removed);
@@ -55,6 +77,14 @@ public class UserRepositoryArrayImpl implements UserRepository {
 
     @Override
     public User addUser(User user) {
-        return null;
+        DB.id += 1;
+        user.setId(DB.id);
+        String[] users = new String[DB.users.length + 1];
+        for (int i = 0; i < users.length - 1; i++) {
+            users[i] = DB.users[i];
+        }
+        users[DB.users.length] = user.toString();
+        DB.users=users;                                   //// проверить
+        return user;
     }
 }

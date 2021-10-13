@@ -12,4 +12,24 @@ public class User {
    private int age;
    private String phoneNumber;
 
+   public User() {
+
+   }
+
+   public User(String name, String surname, int age, String phoneNumber) {
+
+      this.name = name;
+      this.surname = surname;
+      this.age = age;
+      this.phoneNumber = phoneNumber;
+   }
+
+   public User(User user) {
+      id= user.id;
+      name=user.name;
+      surname=user.surname;
+      age= user.age;
+      phoneNumber=user.phoneNumber;
+   }
+
 }

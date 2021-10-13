@@ -29,6 +29,29 @@ public class Main {
 
         System.out.println(userService.getUserById(10));
         System.out.println(userService.getUserById(11));
+        System.out.println("-----------------------");
+
+        User[] userFIO = userService.getUserByFullName("Kate    Katovalova");
+        for (User user : userFIO) {
+            System.out.println(user);
+        }
+
+        System.out.println("user delete: "+userService.removeUserById(11));
+        System.out.println("-----------------------");
+
+        User[] users1=userService.getAllUsers();
+        for (User user : users1) {
+            System.out.println(user);
+        }
+        User newUser=new User("John","Smith",31,"+74951085622");
+        System.out.println(userService.addUser(newUser));
+        User newUser1=new User("John","Smith",31,"+74951085622");
+        System.out.println(userService.addUser(newUser1));
+
+
+
+
+
 
     }
 }
