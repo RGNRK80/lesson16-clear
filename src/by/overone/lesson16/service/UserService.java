@@ -6,6 +6,8 @@ public interface UserService {
 
     User[] getAllUsers();
 
+    void getAllUsersPrint();
+
     User removeUserById(long id);
     User getUserById(long id);
     User[] getUserByFullName(String fullName);

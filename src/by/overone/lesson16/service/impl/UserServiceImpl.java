@@ -15,6 +15,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void getAllUsersPrint() {
+        System.out.println("------------Users-----------");
+        for (User user: userRepository.getAllUsers()) {
+            System.out.println(user);
+        }
+        System.out.println("----------End Users---------");
+    }
+
+    @Override
     public User removeUserById(long id) {
         User[] users = getAllUsers();
         for (User user: users) {

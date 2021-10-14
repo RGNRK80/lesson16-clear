@@ -77,14 +77,21 @@ public class UserRepositoryArrayImpl implements UserRepository {
 
     @Override
     public User addUser(User user) {
+        System.out.println("проверка юзера на вход"+user.toString());
         DB.id += 1;
         user.setId(DB.id);
-        String[] users = new String[DB.users.length + 1];
+        String[] usersNew = new String[DB.users.length + 1];
+
         for (int i = 0; i < DB.users.length ; i++) {
-            users[i] = DB.users[i];
+            usersNew[i] = DB.users[i];
+
         }
-        users[DB.users.length] = user.toString();
-        DB.users=users;                                   //// проверить
+        usersNew[usersNew.length-1] = user.toString();
+        DB.users=usersNew;                                   //// проверить
+
+        for (int i = 0; i < usersNew.length ; i++) {
+            System.out.println(usersNew[i].toString());
+        }
         return user;
     }
 }

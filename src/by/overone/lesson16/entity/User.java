@@ -32,4 +32,13 @@ public class User {
       phoneNumber=user.phoneNumber;
    }
 
+   @Override
+   public String toString() {
+      return
+              "id: " + id + ","+
+              " name: " + name + "," +
+              " surname: " + surname + "," +
+              " age: " + age + ","+
+              " phoneNumber: " + phoneNumber ;
+   }
 }

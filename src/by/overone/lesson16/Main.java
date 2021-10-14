@@ -8,9 +8,8 @@ public class Main {
     public static void main(String[] args) {
 
         UserService userService = new UserServiceImpl();
-
+        userService.getAllUsersPrint(); // удобнее пользоваться поскольку у на 1 статичная бд
         User removedUser = userService.removeUserById(1);
-
 
         if (removedUser.getId() > 0) {
             System.out.println("REMOVED: "+removedUser);
@@ -45,8 +44,14 @@ public class Main {
         }
         User newUser=new User("John","Smith",31,"+74951085622");
         System.out.println(userService.addUser(newUser));
+        System.out.println(" ####### try to add dublicate: John Smith");
         User newUser1=new User("John","Smith",31,"+74951085622");
-        System.out.println(userService.addUser(newUser1));
+        System.out.println(userService.addUser(newUser));
+
+        userService.getAllUsersPrint();
+
+
+
 
 
 
