@@ -80,7 +80,7 @@ public class UserRepositoryArrayImpl implements UserRepository {
         DB.id += 1;
         user.setId(DB.id);
         String[] users = new String[DB.users.length + 1];
-        for (int i = 0; i < users.length - 1; i++) {
+        for (int i = 0; i < DB.users.length ; i++) {
             users[i] = DB.users[i];
         }
         users[DB.users.length] = user.toString();
