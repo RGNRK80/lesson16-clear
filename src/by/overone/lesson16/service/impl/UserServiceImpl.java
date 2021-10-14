@@ -52,4 +52,9 @@ public class UserServiceImpl implements UserService {
         userRepository.addUser(user);
         return user;
     }
+
+    @Override
+    public User[] getUserByFullName(String fullName) {
+        return userRepository.getUserByFullName(fullName);
+    }
 }
