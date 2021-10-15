@@ -39,7 +39,7 @@ public class UserWrapper {
         userFIO=userStr.split("\s+");
         user.setName(userFIO[0]);
         user.setSurname(userFIO[1]);
-        System.out.println(" проверка " + user);
+        //System.out.println(" проверка " + user);
         return user;
     }
 

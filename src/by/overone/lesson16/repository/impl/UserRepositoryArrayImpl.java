@@ -77,7 +77,7 @@ public class UserRepositoryArrayImpl implements UserRepository {
 
     @Override
     public User addUser(User user) {
-        System.out.println("проверка юзера на вход"+user.toString());
+       // System.out.println("проверка юзера на вход"+user.toString());
         DB.id += 1;
         user.setId(DB.id);
         String[] usersNew = new String[DB.users.length + 1];
