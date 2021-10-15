@@ -32,7 +32,7 @@ public class User {
       phoneNumber=user.phoneNumber;
    }
 
-   @Override
+  /* @Override
    public String toString() {
       return
               "id: " + id + ","+
@@ -40,5 +40,5 @@ public class User {
               " surname: " + surname + "," +
               " age: " + age + ","+
               " phoneNumber: " + phoneNumber ;
-   }
+   } */
 }

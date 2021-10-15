@@ -14,14 +14,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.getAllUsers();
     }
 
-    @Override
-    public void getAllUsersPrint() {
-        System.out.println("------------Users-----------");
-        for (User user: userRepository.getAllUsers()) {
-            System.out.println(user);
-        }
-        System.out.println("----------End Users---------");
-    }
 
     @Override
     public User removeUserById(long id) {
@@ -54,7 +46,7 @@ public class UserServiceImpl implements UserService {
             if (userCheck.getName().equals(user.getName()) && userCheck.getSurname().equals(user.getSurname())
                     && userCheck.getAge()== user.getAge() && userCheck.getPhoneNumber().equals(user.getPhoneNumber()) )
             {
-                System.out.println("user is exist");
+               // System.out.println("user is exist");
                 return null;
             }
         }

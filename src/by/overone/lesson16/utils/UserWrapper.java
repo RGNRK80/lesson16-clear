@@ -14,7 +14,7 @@ public class UserWrapper {
                     user.setId(id);
                     break;
                 case "name:":
-                    String name = str.substring(6);  /// правка
+                    String name = str.substring(6);
                     user.setName(name);
                     break;
                 case "surname:":
@@ -41,6 +41,15 @@ public class UserWrapper {
         user.setSurname(userFIO[1]);
         //System.out.println(" проверка " + user);
         return user;
+    }
+
+    public static String userToString(User user) {
+        return
+                "id: " + user.getId() + ","+
+                        " name: " + user.getName() + "," +
+                        " surname: " + user.getSurname() + "," +
+                        " age: " + user.getAge() + ","+
+                        " phoneNumber: " + user.getPhoneNumber() ;
     }
 
 
