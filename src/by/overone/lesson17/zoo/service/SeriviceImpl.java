@@ -24,14 +24,10 @@ public class SeriviceImpl implements ServiceInterface{
         return userRepository.remooveAnimalById(regNumber);
     }
 
-    @Override
-    public Animal getAnimalByInvNumber(int invNumber) {
 
-        return userRepository.getAnimalByInvNumber(invNumber);
-    }
 
     @Override
-    public Animal[] getAnimalByName(String name) {                   // вернуть список одноименных
+    public List getAnimalByName(String name) {                   // вернуть список одноименных
         return userRepository.getAnimalByName(name);
     }
 

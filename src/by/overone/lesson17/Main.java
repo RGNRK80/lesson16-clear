@@ -9,7 +9,7 @@ public class Main {
     public static List<String> countries =new ArrayList<>();
     public static List<String> countr =new LinkedList<>();
 
-    char ch;
+
 
 
 

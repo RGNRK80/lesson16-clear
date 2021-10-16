@@ -23,11 +23,18 @@ public class Herbivore extends Animal{
         this.age=herbivore.age;
         this.habitate = herbivore.habitate;
     }
-
+    public Herbivore(Animal herbivore){   //клон
+        this.regNumber=herbivore.regNumber;
+        this.type=herbivore.type;
+        this.name=herbivore.name;
+        this.sex=herbivore.sex;
+        this.age=herbivore.age;
+        this.habitate = ((Herbivore)herbivore).habitate;
+    }
 
     @Override
     public String feed(Meal meal) {
         if (meal.getType().equals("grass")) {emotion="joy :)";} else {emotion="cry :/";}
-        return null;
+        return emotion;
     }
 }

@@ -5,7 +5,6 @@ import lombok.Data;
 @Data
 public abstract class Animal {
       protected int regNumber;  // инв номер
-
       protected String type;    // тип животного
       protected String name;    // кличка
       protected String sex;     // пол

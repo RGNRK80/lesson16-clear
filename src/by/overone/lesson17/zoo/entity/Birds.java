@@ -23,12 +23,19 @@ public class Birds extends Animal{
         this.age=bird.age;
         this.wingMeasure = bird.wingMeasure;
     }
-
+    public Birds(Animal bird){   //клон
+        this.regNumber=bird.regNumber;
+        this.type=bird.type;
+        this.name=bird.name;
+        this.sex=bird.sex;
+        this.age=bird.age;
+        this.wingMeasure = ((Birds)bird).wingMeasure;
+    }
 
     @Override
     public String feed(Meal meal) {
         if (meal.getType().equals("birdFood")) {emotion="sings :)";} else {emotion="outraged :/";}
-        return null;
+        return emotion;
     }
 }
 

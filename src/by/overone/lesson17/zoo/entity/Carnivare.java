@@ -24,10 +24,18 @@ public class Carnivare extends Animal{
         this.agroLevel = carnivare.agroLevel;
     }
 
+    public Carnivare(Animal carnivare){   //клон
+        this.regNumber=carnivare.regNumber;
+        this.type=carnivare.type;
+        this.name=carnivare.name;
+        this.sex=carnivare.sex;
+        this.age=carnivare.age;
+        this.agroLevel = ((Carnivare)carnivare).agroLevel;
 
+    }
     @Override
     public String feed(Meal meal) {
         if (meal.getType().equals("meat")) {emotion="rumble :)";} else {emotion="angry :/";}
-        return null;
+        return emotion;
     }
 }

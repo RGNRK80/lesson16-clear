@@ -1,8 +1,7 @@
 package by.overone.lesson17.zoo.repository;
 
 import by.overone.lesson17.zoo.bd.Bd;
-import by.overone.lesson17.zoo.entity.Animal;
-import by.overone.lesson17.zoo.entity.Meal;
+import by.overone.lesson17.zoo.entity.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,35 +37,25 @@ public class UserRepositoryList implements BdReposytiry{
         return null;
     }
 
-    @Override
-    public Animal getAnimalByInvNumber(int invNumber) {
-        for (Animal animal: Bd.animals)
-        {
-            if (animal.getRegNumber()==invNumber)
-            {return animal;
-            }
 
-        }
-        return null;
-    }
 
     @Override
-    public Animal[] getAnimalByName(String name) {
+    public List getAnimalByName(String name) {
         List<Animal> units=new ArrayList<>();
         for (Animal animal: Bd.animals)
               {
                   if (animal.getName().equals(name))
-                  { units.add(animal);
+                  {units.add(animal);
               }
 
         }
-        Animal[] rezult=units.toArray(new Animal[0]);
-        return rezult;
+        //Animal[] rezult=units.toArray(new Animal[0]);
+        return units;
     }
 
     @Override
     public String feed(Animal animal, Meal meal) {
-         return animal.feed(meal);
+        return animal.feed(meal);
     }
 
     @Override
