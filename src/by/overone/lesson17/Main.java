@@ -7,15 +7,16 @@ public class Main {
     public static List<String> countries =new ArrayList<>();
 
     public static void main(String[] args) {
-        countries.add("Sweeden");
+        countries.add("Sweden");
         countries.add("Norway");
         countries.add("Finland");
+        countries.add("Denmark");
 
         System.out.println(countries);
 
         countries.set(1,"New Norway");
         countries.remove(1);
-        countries.remove("Sweeden");
+        countries.remove("Sweden");
 
         countries.indexOf("Finland");
         System.out.println( countries.contains("Finland"));
