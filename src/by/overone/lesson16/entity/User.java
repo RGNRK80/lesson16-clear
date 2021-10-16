@@ -31,6 +31,10 @@ public class User {
       age= user.age;
       phoneNumber=user.phoneNumber;
    }
+   public void out (String name) {
+      this.name=name+"1";
+   }
+
 
   /* @Override
    public String toString() {

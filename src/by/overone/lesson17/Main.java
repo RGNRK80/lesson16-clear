@@ -4,9 +4,15 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class Main {
     public static List<String> countries =new ArrayList<>();
     public static List<String> countr =new LinkedList<>();
+
+    char ch;
+
+
+
 
     public static void main(String[] args) {
         countries.add("Sweden");
