@@ -3,11 +3,13 @@ package by.overone.lesson16.service.impl;
 import by.overone.lesson16.entity.User;
 import by.overone.lesson16.repository.UserRepository;
 import by.overone.lesson16.repository.impl.UserRepositoryArrayImpl;
+import by.overone.lesson16.repository.impl.UserRepositoryListImpl;
 import by.overone.lesson16.service.UserService;
 
 public class UserServiceImpl implements UserService {
 
-    private final UserRepository userRepository = new UserRepositoryArrayImpl();
+    //private final UserRepository userRepository = new UserRepositoryArrayImpl();
+    private final UserRepository userRepository = new UserRepositoryListImpl();
 
     @Override
     public User[] getAllUsers() {
