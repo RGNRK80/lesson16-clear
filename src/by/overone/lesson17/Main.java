@@ -10,6 +10,7 @@ public class Main {
     public static List<String> countr =new LinkedList<>();
 
 
+String srt="#{name} #{surname}. Some text #{tag}.";
 
 
 
