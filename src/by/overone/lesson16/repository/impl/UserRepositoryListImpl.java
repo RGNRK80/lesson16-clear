@@ -21,12 +21,31 @@ public class UserRepositoryListImpl implements UserRepository {
 
     @Override
     public User getUserById(long id) {
+        User check=new User();
+        for (String user: DBList.users) {
+            check=UserWrapper.stringToUser(user);
+            if (check.getId()==id) return check;
+
+        }
         return null;
     }
 
     @Override
     public User[] getUserByFullName(String fullName) {
-        return new User[0];
+        List<User> rezult = new ArrayList<>();
+        User userToFind=UserWrapper.stringToFIO(fullName);
+        User chekX=new User();
+
+        for (String user: DBList.users) {
+            chekX=UserWrapper.stringToUser(user);
+            if (userToFind.getName().equals(chekX.getName()) && userToFind.getSurname().equals(chekX.getSurname())) {
+                rezult.add(chekX);
+            }
+
+
+        }
+        if (rezult.size()==0) {return null;}
+        return rezult.toArray(new User[0]);
     }
 
     @Override
@@ -47,6 +66,9 @@ public class UserRepositoryListImpl implements UserRepository {
 
     @Override
     public User addUser(User user) {
-        return null;
+        DB.id += 1;
+        user.setId(DB.id);
+        DBList.users.add(UserWrapper.userToString(user));
+        return user;
     }
 }

@@ -89,9 +89,9 @@ public class UserRepositoryArrayImpl implements UserRepository {
         usersNew[usersNew.length-1] =  UserWrapper.userToString(user);            //заменить
         DB.users=usersNew;
 
-        for (int i = 0; i < usersNew.length ; i++) {
+       /* for (int i = 0; i < usersNew.length ; i++) {
             System.out.println(usersNew[i]);
-        }
+        } */
         return user;
     }
 }
