@@ -22,7 +22,7 @@ public class Herbivore extends Animal{
 
     @Override
     public String feed(Meal meal) {
-        if (meal.getType().equals("grass")) {emotion="joy :)";} else {emotion="cry :/";}
+        if (meal.getType().equals("grass")) {emotion=name + " is joy :)";} else {emotion=name + " is cry :/";}
         return emotion;
     }
 }

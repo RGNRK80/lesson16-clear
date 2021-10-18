@@ -23,7 +23,7 @@ public class Carnivare extends Animal{
     }
     @Override
     public String feed(Meal meal) {
-        if (meal.getType().equals("meat")) {emotion="rumble :)";} else {emotion="angry :/";}
+        if (meal.getType().equals("meat")) {emotion=name + "is rumble :)";} else {emotion=name + " is angry :/";}
         return emotion;
     }
 }

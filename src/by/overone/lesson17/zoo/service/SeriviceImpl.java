@@ -24,6 +24,10 @@ public class SeriviceImpl implements ServiceInterface{
         return userRepository.remooveAnimalById(regNumber);
     }
 
+    @Override
+    public Animal getAnimalById(int regNumber) {
+        return userRepository.getAnimalById(regNumber);
+    }
 
 
     @Override

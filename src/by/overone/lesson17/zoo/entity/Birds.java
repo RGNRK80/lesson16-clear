@@ -22,7 +22,7 @@ public class Birds extends Animal{
 
     @Override
     public String feed(Meal meal) {
-        if (meal.getType().equals("birdFood")) {emotion="sings :)";} else {emotion="outraged :/";}
+        if (meal.getType().equals("birdFood")) {emotion=name + " is sings :)";} else {emotion=name + " is outraged :/";}
         return emotion;
     }
 }

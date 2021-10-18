@@ -51,10 +51,11 @@ public class Main {
         Meal mealForHerbivore=new Meal("grass");
 
         // кормим
-        System.out.println(service.feed(animal1,mealForCarnivare));       // выполняется
-        System.out.println(service.feed(animal1,mealForBirds));       // выполняется
-        System.out.println(service.feed(animal5,mealForBirds));           // выполняется
-        System.out.println(service.feed(animal9,mealForHerbivore));           // выполняется
+        System.out.println(service.feed(service.getAnimalById(2),mealForCarnivare));       // из бд по инв номеру
+        System.out.println(service.feed((Animal) service.getAnimalByName("Diablo").get(0),mealForBirds)); // из бд по имени
+        System.out.println(service.feed(animal5,mealForBirds));           // просто покормить
+        System.out.println(service.feed(animal9,mealForHerbivore));           // просто покормить
+
 
         service.remooveAnimal(animal1);
         service.remooveAnimal(animal1);
