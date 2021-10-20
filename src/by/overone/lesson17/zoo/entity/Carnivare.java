@@ -5,37 +5,25 @@ public class Carnivare extends Animal{
     String emotion;
 
     public Carnivare(String type, String name,String sex, int age, int agroLevel) { //инициализация
-
-        this.type=type;
-        this.name=name;
-        this.sex=sex;
-        this.age=age;
+        super(type,name,sex,age);
         this.agroLevel = agroLevel;
     }
     public Carnivare(){ //создание
 
     }
     public Carnivare(Carnivare carnivare){   //клон
-        this.regNumber=carnivare.regNumber;
-        this.type=carnivare.type;
-        this.name=carnivare.name;
-        this.sex=carnivare.sex;
-        this.age=carnivare.age;
+        super(carnivare.regNumber, carnivare.type, carnivare.name, carnivare.sex, carnivare.age);
         this.agroLevel = carnivare.agroLevel;
     }
 
     public Carnivare(Animal carnivare){   //клон
-        this.regNumber=carnivare.regNumber;
-        this.type=carnivare.type;
-        this.name=carnivare.name;
-        this.sex=carnivare.sex;
-        this.age=carnivare.age;
+        super(carnivare.regNumber, carnivare.type, carnivare.name, carnivare.sex, carnivare.age);
         this.agroLevel = ((Carnivare)carnivare).agroLevel;
 
     }
     @Override
     public String feed(Meal meal) {
-        if (meal.getType().equals("meat")) {emotion="rumble :)";} else {emotion="angry :/";}
+        if (meal.getType().equals("meat")) {emotion=name + "is rumble :)";} else {emotion=name + " is angry :/";}
         return emotion;
     }
 }
