@@ -12,6 +12,7 @@ public class UserRepositoryList implements BdReposytiry{
         Bd.invNumber++;
         animal.setRegNumber(Bd.invNumber);
         Bd.animals.add(animal);
+
         return animal;
     }
 
@@ -37,6 +38,16 @@ public class UserRepositoryList implements BdReposytiry{
         return null;
     }
 
+    @Override
+    public Animal getAnimalById(int regNumber) {
+        for (Animal animal: Bd.animals)
+        {
+            if (animal.getRegNumber()==regNumber)
+            {return animal;           }
+
+        }
+        return null;
+    }
 
 
     @Override
@@ -62,4 +73,9 @@ public class UserRepositoryList implements BdReposytiry{
     public List getAll() {
         return Bd.animals;
     }
+
+   /* @Override
+    public List sortByAge() {
+        return null;
+    }*/
 }

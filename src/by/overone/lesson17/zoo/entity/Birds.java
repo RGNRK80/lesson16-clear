@@ -4,39 +4,38 @@ public class Birds extends Animal{
     private int wingMeasure;
     String emotion;
 
-    public Birds(String type, String name,String sex, int age, int wingMeasure) { //инициализация
-
-        this.type=type;
-        this.name=name;
-        this.sex=sex;
-        this.age=age;
+    public Birds(String type, String name,String sex, int age, int wingMeasure) {
+        super(type,name,sex,age); //инициализация
         this.wingMeasure = wingMeasure;
     }
     public Birds(){ //создание
 
     }
     public Birds(Birds bird){   //клон
-        this.regNumber=bird.regNumber;
-        this.type=bird.type;
-        this.name=bird.name;
-        this.sex=bird.sex;
-        this.age=bird.age;
+        super(bird.regNumber,bird.type, bird.name, bird.sex, bird.age);
         this.wingMeasure = bird.wingMeasure;
     }
     public Birds(Animal bird){   //клон
-        this.regNumber=bird.regNumber;
-        this.type=bird.type;
-        this.name=bird.name;
-        this.sex=bird.sex;
-        this.age=bird.age;
+        super(bird.regNumber, bird.type, bird.name, bird.sex, bird.age);
         this.wingMeasure = ((Birds)bird).wingMeasure;
     }
 
     @Override
     public String feed(Meal meal) {
-        if (meal.getType().equals("birdFood")) {emotion="sings :)";} else {emotion="outraged :/";}
+        if (meal.getType().equals("birdFood")) {emotion=name + " is sings :)";} else {emotion=name + " is outraged :/";}
         return emotion;
     }
+
+    @Override
+    public int compareTo(Animal o) {
+        if (this.age==o.age) {return 0;}
+        if (this.age<o.age) {return -1;}
+        return 1;
+    }
+
+
+
+
 }
 
 

@@ -17,7 +17,7 @@ public class Main {
         Animal animal3=new Carnivare("Panther","Bagira","female",5,2);
         Animal animal4=new Carnivare("Crocodile","Alvares","male",37,7);
 
-        Animal animal5=new Birds("Parrot Ara","Gosha","male",2,100);
+        Animal animal5=new Birds("Parrot Ara","Gosha","male",3,100);
         Animal animal6=new Birds("Parrot Ara","Lara","female",2,92);
         Animal animal7=new Birds("Kiwi","Jo","male",5,15);
         Animal animal8=new Birds("Kiwi","Maya","female",3,15);
@@ -51,10 +51,11 @@ public class Main {
         Meal mealForHerbivore=new Meal("grass");
 
         // кормим
-        System.out.println(service.feed(animal1,mealForCarnivare));       // выполняется
-        System.out.println(service.feed(animal1,mealForBirds));       // выполняется
-        System.out.println(service.feed(animal5,mealForBirds));           // выполняется
-        System.out.println(service.feed(animal9,mealForHerbivore));           // выполняется
+        System.out.println(service.feed(service.getAnimalById(2),mealForCarnivare));       // из бд по инв номеру
+        System.out.println(service.feed((Animal) service.getAnimalByName("Diablo").get(0),mealForBirds)); // из бд по имени
+        System.out.println(service.feed(animal5,mealForBirds));           // просто покормить
+        System.out.println(service.feed(animal9,mealForHerbivore));           // просто покормить
+
 
         service.remooveAnimal(animal1);
         service.remooveAnimal(animal1);
@@ -62,6 +63,9 @@ public class Main {
         System.out.println(service.remooveAnimalById(3)); //+
         System.out.println(Bd.animals.size());
         System.out.println(service.getAnimalByName("Diablo"));
+
+        System.out.println(animal5.compareTo(animal6));
+
 
     }
 
