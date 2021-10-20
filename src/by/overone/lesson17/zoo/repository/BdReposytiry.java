@@ -14,5 +14,6 @@ public interface BdReposytiry {
     List getAnimalByName(String name);
     String feed(Animal animal, Meal meal);
     List getAll();
+
    // List sortByAge();
 }

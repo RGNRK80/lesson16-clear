@@ -5,7 +5,10 @@ import by.overone.lesson17.zoo.entity.Meal;
 import by.overone.lesson17.zoo.repository.BdReposytiry;
 import by.overone.lesson17.zoo.repository.UserRepositoryList;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class SeriviceImpl implements ServiceInterface{
     private final BdReposytiry userRepository = new UserRepositoryList();
@@ -43,5 +46,17 @@ public class SeriviceImpl implements ServiceInterface{
     @Override
     public List getAll() {
         return userRepository.getAll();
+    }
+
+    @Override
+    public List getSortedBDByAge() {
+        Set<Animal> sorted=new TreeSet<>();
+        List<Animal> bdList=userRepository.getAll();
+        for (Animal unit: bdList) {
+            sorted.add(unit);
+            }
+        List<Animal> result=new ArrayList<>();
+        for (Animal unit: sorted) {result.add(unit);}
+        return result;
     }
 }

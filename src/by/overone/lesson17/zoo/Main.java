@@ -65,6 +65,8 @@ public class Main {
         System.out.println(service.getAnimalByName("Diablo"));
 
         System.out.println(animal5.compareTo(animal6));
+        System.out.println("-----------sorted1-----------------");
+        System.out.println(service.getSortedBDByAge());
 
 
     }

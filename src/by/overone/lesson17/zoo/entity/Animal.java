@@ -32,6 +32,7 @@ public abstract class Animal implements Comparable<Animal>{
       }
 
       public abstract String feed (Meal meal);
+      public abstract int compareTo(Animal o);
 
 
 
