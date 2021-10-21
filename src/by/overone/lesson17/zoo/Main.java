@@ -74,7 +74,7 @@ public class Main {
 
         for (Animal unit: sortedClass)
               {
-                  System.out.println(unit.getClass() + "     " + unit);
+                  System.out.println(unit.getClass().toString().substring(37) + "     " + unit);
 
         }
 
