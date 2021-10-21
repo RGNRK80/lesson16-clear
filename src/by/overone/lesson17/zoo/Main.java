@@ -6,6 +6,7 @@ import by.overone.lesson17.zoo.service.SeriviceImpl;
 import by.overone.lesson17.zoo.service.ServiceInterface;
 
 import java.security.Provider;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -67,6 +68,15 @@ public class Main {
         System.out.println(animal5.compareTo(animal6));
         System.out.println("-----------sorted1-----------------");
         System.out.println(service.getSortedBDByAge());
+        System.out.println("-----------sorted2-----------------");
+        List<Animal> sortedClass= new ArrayList<>();
+        sortedClass=service.getSortedBDByClass();
+
+        for (Animal unit: sortedClass)
+              {
+                  System.out.println(unit.getClass() + "     " + unit);
+
+        }
 
 
     }

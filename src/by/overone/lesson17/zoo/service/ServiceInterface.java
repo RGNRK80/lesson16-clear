@@ -16,6 +16,6 @@ public interface ServiceInterface {
     String feed(Animal animal, Meal meal);
     List getAll();
     List  getSortedBDByAge();
-
+    List getSortedBDByClass();
 
 }

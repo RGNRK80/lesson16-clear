@@ -11,6 +11,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class SeriviceImpl implements ServiceInterface{
+    ClassComparator classComparator=new ClassComparator();
     private final BdReposytiry userRepository = new UserRepositoryList();
     @Override
     public Animal addAnimal(Animal animal) {
@@ -58,5 +59,13 @@ public class SeriviceImpl implements ServiceInterface{
         List<Animal> result=new ArrayList<>();
         for (Animal unit: sorted) {result.add(unit);}
         return result;
+    }
+
+    @Override
+    public List getSortedBDByClass() {
+        List<Animal> bdList=userRepository.getAll();
+        bdList.sort(classComparator);
+
+        return bdList;
     }
 }
