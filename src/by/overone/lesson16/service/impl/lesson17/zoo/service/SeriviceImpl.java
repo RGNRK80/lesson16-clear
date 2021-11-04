@@ -1,9 +1,9 @@
-package by.overone.lesson17.zoo.service;
+package by.overone.lesson16.service.impl.lesson17.zoo.service;
 
-import by.overone.lesson17.zoo.entity.Animal;
-import by.overone.lesson17.zoo.entity.Meal;
-import by.overone.lesson17.zoo.repository.BdReposytiry;
-import by.overone.lesson17.zoo.repository.UserRepositoryList;
+import by.overone.lesson16.service.impl.lesson17.zoo.entity.Animal;
+import by.overone.lesson16.service.impl.lesson17.zoo.entity.Meal;
+import by.overone.lesson16.service.impl.lesson17.zoo.repository.BdReposytiry;
+import by.overone.lesson16.service.impl.lesson17.zoo.repository.UserRepositoryList;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,6 @@
-package by.overone.lesson17.zoo.service;
+package by.overone.lesson16.service.impl.lesson17.zoo.service;
 
-import by.overone.lesson17.zoo.entity.Animal;
-import by.overone.lesson17.zoo.entity.Birds;
-import by.overone.lesson17.zoo.entity.Carnivare;
-import by.overone.lesson17.zoo.entity.Herbivore;
+import by.overone.lesson16.service.impl.lesson17.zoo.entity.Animal;
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
-package by.overone.lesson17.zoo.bd;
+package by.overone.lesson16.service.impl.lesson17.zoo.bd;
 
-import by.overone.lesson17.zoo.entity.Animal;
+import by.overone.lesson16.service.impl.lesson17.zoo.entity.Animal;
 import lombok.Data;
 
 import java.util.ArrayList;

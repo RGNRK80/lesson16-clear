@@ -1,7 +1,7 @@
-package by.overone.lesson17.zoo.repository;
+package by.overone.lesson16.service.impl.lesson17.zoo.repository;
 
-import by.overone.lesson17.zoo.bd.Bd;
-import by.overone.lesson17.zoo.entity.*;
+import by.overone.lesson16.service.impl.lesson17.zoo.bd.Bd;
+import by.overone.lesson16.service.impl.lesson17.zoo.entity.*;
 
 import java.util.ArrayList;
 import java.util.List;

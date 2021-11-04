@@ -1,16 +1,17 @@
-package by.overone.lesson17.zoo;
+package by.overone.lesson16.service.impl.lesson17.zoo;
 
-import by.overone.lesson17.zoo.bd.Bd;
-import by.overone.lesson17.zoo.entity.*;
-import by.overone.lesson17.zoo.service.SeriviceImpl;
-import by.overone.lesson17.zoo.service.ServiceInterface;
+import by.overone.lesson16.service.impl.lesson17.zoo.bd.Bd;
+import by.overone.lesson16.service.impl.lesson17.zoo.entity.*;
+import by.overone.lesson16.service.impl.lesson17.zoo.service.SeriviceImpl;
+import by.overone.lesson16.service.impl.lesson17.zoo.service.ServiceInterface;
 
-import java.security.Provider;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
         ServiceInterface service = new SeriviceImpl();
         // БД животных
         Animal animal1=new Carnivare("Lion","Diablo","male",20,9);

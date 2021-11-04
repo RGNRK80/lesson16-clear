@@ -1,4 +1,4 @@
-package by.overone.lesson17.zoo.entity;
+package by.overone.lesson16.service.impl.lesson17.zoo.entity;
 
 public class Herbivore extends Animal{
     private String habitate; // проживание
