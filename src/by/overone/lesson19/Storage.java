@@ -13,4 +13,6 @@ public class Storage {
         this.productType = productType;
         this.employee = employee;
     }
+
+
 }

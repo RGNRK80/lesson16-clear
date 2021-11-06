@@ -2,6 +2,7 @@ package by.overone.exceptions;
 
 public class Main {
     public static void main(String[] args) {
+        String xx;
         int d,a;
         int[] arr=new int[5];
         d=0;
