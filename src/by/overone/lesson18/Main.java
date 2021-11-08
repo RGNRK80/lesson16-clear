@@ -4,13 +4,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-       /* String str = "Hello, #{name} #{surname}. Some text #{tag}.";
-        String[] words = str.split("(?<=[{])\\w+");
-        for (String unit: words
-             ) {
-            System.out.println(unit);
 
-        }*/
         List<String> roles=new ArrayList<>();
         roles.add("tester");
         roles.add("tester1");
