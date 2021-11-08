@@ -2,7 +2,7 @@ package by.overone.lesson23_hometask;
 
 public class Main {
     public static void main(String[] args) {
-        Num xNum=new Num(50.15);
+        Num<Float> xNum=new Num(50.15);
         short x=10;
         System.out.println(xNum.multiplikate(0.5f));
         var z=xNum.multiplikate(x);
@@ -12,9 +12,10 @@ public class Main {
         System.out.println(z2);
         z2=xNum.addTo(x);
 
-        Num yNum=new Num((float)4000);
+        Num<Float> yNum=new Num(4000);
         Num zNum=xNum.multiplikate(yNum);
         System.out.println(zNum.getVal().getClass());
+        zNum=xNum.addTo(yNum);
 
 
 

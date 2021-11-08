@@ -2,18 +2,13 @@ package by.overone.lesson23_hometask;
 
 public class Num < T extends Number>{
     private T val;
-
     public Num() {};
-
     public Num(T val) {
         this.val = val;
     }
-
-
     public T getVal() {
         return val;
     }
-
     public void setVal(T val) {
         this.val = val;
     }
@@ -50,7 +45,6 @@ public class Num < T extends Number>{
         return (byte) rezult;
     }
 
-
     public Num multiplikate (Num x1) {
         if (x1.val instanceof Long) { Num rez=new Num(multiplikate(x1.val.longValue())); return rez;}
         if (x1.val instanceof Integer) { Num rez=new Num(multiplikate(x1.val.intValue())); return rez;}
@@ -61,13 +55,6 @@ public class Num < T extends Number>{
 
         return null;
     }
-
-
-
-
-
-
-
 
     public double division (double x) {
         var rezult=val.doubleValue() / x;
@@ -101,8 +88,6 @@ public class Num < T extends Number>{
         return (byte) rezult;
     }
 
-
-
     public Num division (Num x1) {
         if (x1.val instanceof Long) { Num rez=new Num(division(x1.val.longValue())); return rez;}
         if (x1.val instanceof Integer) { Num rez=new Num(division(x1.val.intValue())); return rez;}
@@ -112,9 +97,6 @@ public class Num < T extends Number>{
         if (x1.val instanceof Short) { Num rez=new Num(division(x1.val.shortValue())); return rez;}
         return null;
     }
-
-
-
 
     public double addTo (double x) {
         var rezult=val.doubleValue() + x;
@@ -149,8 +131,6 @@ public class Num < T extends Number>{
         return (byte) rezult;
     }
 
-
-
     public Num addTo (Num x1) {
         if (x1.val instanceof Long) { Num rez=new Num(addTo(x1.val.longValue())); return rez;}
         if (x1.val instanceof Integer) { Num rez=new Num(addTo(x1.val.intValue())); return rez;}
@@ -160,9 +140,6 @@ public class Num < T extends Number>{
         if (x1.val instanceof Short) { Num rez=new Num(addTo(x1.val.shortValue())); return rez;}
         return null;
     }
-
-
-
 
     public double subtraction (double x) {
         var rezult=val.doubleValue() - x;
@@ -196,8 +173,6 @@ public class Num < T extends Number>{
         if (rezult>Byte.MAX_VALUE || rezult<Byte.MIN_VALUE) {throw new ArithmeticException("byte overflow");}
         return (byte) rezult;
     }
-
-
 
     public Num subtraction (Num x1) {
         if (x1.val instanceof Long) { Num rez=new Num(subtraction(x1.val.longValue())); return rez;}
