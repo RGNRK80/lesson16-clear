@@ -1,6 +1,7 @@
 package by.overone.lesson23_hometask;
 
 public class Num < T extends Number>{
+
     private T val;
     public Num() {};
     public Num(T val) {
@@ -182,6 +183,63 @@ public class Num < T extends Number>{
         if (x1.val instanceof Byte) { Num rez=new Num(subtraction(x1.val.byteValue())); return rez;}
         if (x1.val instanceof Short) { Num rez=new Num(subtraction(x1.val.shortValue())); return rez;}
         return null;
+    }
+
+    // 2
+
+    public Num<T> sum (Num x1) {
+        System.out.println(val + " 1: "+val.getClass());
+        Double rez= val.doubleValue() + x1.val.doubleValue();
+        checkToOverflow(val,rez);
+
+        T newval=(T) rez;  //  T вдруг становится даблом...
+        System.out.println(newval+ " 2: " + newval.getClass());
+        Num<T> r = new Num(newval);
+        System.out.println(r.val.getClass());
+        return r;
+
+    }
+
+    public T mult (T x1) {
+        Double rez= val.doubleValue() * x1.doubleValue();
+        checkToOverflow(val,rez);
+        val=(T) rez;
+        return (T)val;
+    }
+    public T divis (T x1) {
+        Double rez= val.doubleValue() / x1.doubleValue();
+        checkToOverflow(val,rez);
+        val=(T) rez;
+        return (T)val;
+    }
+    public T substr (T x1) {
+        Double rez= val.doubleValue() - x1.doubleValue();
+        checkToOverflow(val,rez);
+        val=(T) rez;
+        return (T)val;
+    }
+
+
+    public void checkToOverflow (T unit, Double rezult) {
+        if ((unit instanceof Integer) && (rezult>Integer.MAX_VALUE || rezult<Integer.MIN_VALUE)) {
+        throw new ArithmeticException("integer overflow");}
+        if ((unit instanceof Float) && (rezult>Float.MAX_VALUE || rezult<Float.MIN_VALUE)) {
+            throw new ArithmeticException("integer overflow");}
+        if ((unit instanceof Double) && (rezult>Double.MAX_VALUE || rezult<Double.MIN_VALUE)) {
+            throw new ArithmeticException("integer overflow");}
+        if ((unit instanceof Byte) && (rezult>Byte.MAX_VALUE || rezult<Byte.MIN_VALUE)) {
+            throw new ArithmeticException("integer overflow");}
+        if ((unit instanceof Short) && (rezult>Short.MAX_VALUE || rezult<Short.MIN_VALUE)) {
+            throw new ArithmeticException("integer overflow");}
+
+    }
+
+
+    @Override
+    public String toString() {
+        return "Num{" +
+                "val=" + val +
+                '}'+ "Class" + val.getClass();
     }
 }
 

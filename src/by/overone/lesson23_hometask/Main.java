@@ -17,6 +17,20 @@ public class Main {
         System.out.println(zNum.getVal().getClass());
         zNum=xNum.addTo(yNum);
 
+// 2 метод
+        System.out.println("----2----");
+
+        Num<Integer> numInt1=new Num<>(150);
+        System.out.println(numInt1);  //+
+        Num<Integer> numInt2=new Num<>(500);
+        System.out.println(numInt2);  //+
+        Num<Double> numDou1=new Num<>(50.50);
+        System.out.println(numDou1);  //+
+
+      Num<Integer> numInt3=numInt1.sum(numInt2);
+        System.out.println(numInt3);
+
+
 
 
     }
