@@ -185,38 +185,49 @@ public class Num < T extends Number>{
         return null;
     }
 
-    // 2
 
-    public Num<T> sum (Num x1) {
-        System.out.println(val + " 1: "+val.getClass());
-        Double rez= val.doubleValue() + x1.val.doubleValue();
-        checkToOverflow(val,rez);
 
-        T newval=(T) rez;  //  T вдруг становится даблом...
-        System.out.println(newval+ " 2: " + newval.getClass());
-        Num<T> r = new Num(newval);
-        System.out.println(r.val.getClass());
+    // Исполнение 2
+
+
+
+
+    public Num<T> getCl (T unit, Double rezult) {
+        if (val instanceof Integer) {Num<Integer> rint = new Num(rezult.intValue()); return (Num<T>) rint; }
+        if (val instanceof Long) {Num<Integer> rint = new Num(rezult.longValue());return (Num<T>) rint; }
+        if (val instanceof Short) {Num<Integer> rint = new Num(rezult.shortValue()); return (Num<T>) rint;}
+        if (val instanceof Byte) {Num<Integer> rint = new Num(rezult.byteValue());return (Num<T>) rint; }
+        if (val instanceof Float) {Num<Integer> rint = new Num(rezult.floatValue());return (Num<T>) rint; }
+        if (val instanceof Double) {Num<Integer> rint = new Num(rezult);return (Num<T>) rint;}
+
+    return null;
+    }
+
+
+    public Num<T> sum(Num x1) {
+        Double rez = val.doubleValue() + x1.val.doubleValue();
+        checkToOverflow(val, rez);
+        Num<T> r = getCl(val, rez);
         return r;
-
     }
 
-    public T mult (T x1) {
-        Double rez= val.doubleValue() * x1.doubleValue();
-        checkToOverflow(val,rez);
-        val=(T) rez;
-        return (T)val;
+    public Num<T> mult (Num x1) {
+        Double rez = val.doubleValue() * x1.val.doubleValue();
+        checkToOverflow(val, rez);
+        Num<T> r = getCl(val, rez);
+        return r;
     }
-    public T divis (T x1) {
-        Double rez= val.doubleValue() / x1.doubleValue();
-        checkToOverflow(val,rez);
-        val=(T) rez;
-        return (T)val;
+    public Num<T> divis (Num x1) {
+        Double rez = val.doubleValue() / x1.val.doubleValue();
+        checkToOverflow(val, rez);
+        Num<T> r = getCl(val, rez);
+        return r;
     }
-    public T substr (T x1) {
-        Double rez= val.doubleValue() - x1.doubleValue();
-        checkToOverflow(val,rez);
-        val=(T) rez;
-        return (T)val;
+    public Num<T> substr (Num x1) {
+        Double rez = val.doubleValue() - x1.val.doubleValue();
+        checkToOverflow(val, rez);
+        Num<T> r = getCl(val, rez);
+        return r;
     }
 
 

@@ -27,8 +27,8 @@ public class Main {
         Num<Double> numDou1=new Num<>(50.50);
         System.out.println(numDou1);  //+
 
-      Num<Integer> numInt3=numInt1.sum(numInt2);
-        System.out.println(numInt3);
+     Num<Integer> numInt3=numInt1.sum(numDou1);
+      System.out.println("rezult:  " +  numInt3);
 
 
 
