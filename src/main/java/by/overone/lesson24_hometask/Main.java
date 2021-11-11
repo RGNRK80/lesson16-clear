@@ -3,22 +3,20 @@ package by.overone.lesson24_hometask;
 import java.util.Locale;
 import java.util.Scanner;
 
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 public class Main {
 
-    {
-        String datestr="";
-        String month=null;
-        int date=0;
-
-    }
-
-
-
-    public static void main(String[] args) {
+      public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver","F:\\java\\Selenium\\chromedriver.exe ");
         Scanner scanner=new Scanner(System.in);
         String datestr="";
         String month=null;
         int date=0;
+        WebDriver driver = new ChromeDriver();
+
 
 
 
@@ -61,6 +59,7 @@ public class Main {
             String zmonth;
             String first;
             String last;
+
 
              public Zodiak(int zdate, String zmonth) {
                  this.zdate = zdate;
@@ -126,9 +125,12 @@ public class Main {
           Zodiak zz=new Zodiak(date,month);
           if (date >= Month.valueOf(month).dayToTransfer) {
               System.out.println( "your zodiak is: " + zz.last);
+              driver.get(Zod.valueOf(zz.last).goroskop);
           } else {
               System.out.println("your zodiak is: " + zz.first);
+              driver.get(Zod.valueOf(zz.first).goroskop);
           }
+
 
 
 
