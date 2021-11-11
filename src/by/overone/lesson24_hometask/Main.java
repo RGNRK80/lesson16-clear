@@ -31,7 +31,7 @@ public class Main {
                 }
                 // проверяем месяц
                 try {
-                    System.out.println(" " + Month.valueOf(month).days);
+                    System.out.println(" quantity days in month is " + Month.valueOf(month).days);
                     break;
                 } catch (Exception e) {
                     System.out.println("wrong month");
