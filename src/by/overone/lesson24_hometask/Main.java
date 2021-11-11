@@ -5,7 +5,12 @@ import java.util.Scanner;
 
 public class Main {
 
+    {
+        String datestr="";
+        String month=null;
+        int date=0;
 
+    }
 
 
 
@@ -16,7 +21,7 @@ public class Main {
         int date=0;
 
 
-      //  while (true){
+
         System.out.println("enter date and month of birth");
 
             while (true) {
@@ -127,7 +132,7 @@ public class Main {
 
 
 
-     //   }
+
 
     }  // psvm
 }
