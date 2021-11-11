@@ -20,9 +20,9 @@ public class Main {
         System.out.println("enter date and month of birth");
 
             while (true) {
-                System.out.println("month: ");
+                System.out.print("month: ");
                 if (scanner.hasNext()) {
-                    month = scanner.nextLine().toUpperCase(Locale.ROOT);
+                    month = scanner.nextLine().trim().toUpperCase(Locale.ROOT);
                 }
                 // проверяем месяц
                 try {
@@ -39,23 +39,16 @@ public class Main {
             System.out.println("date: ");
             if (scanner.hasNextInt()) {
                 date = scanner.nextInt();
-                System.out.println("---"+month);
+
                 int check=Month.valueOf(month).days;
                 if (date<check && date >0)  {
-                System.out.println("your date: "+ date);
-                   ch=false;}
+               ;
+                   ch=false;} else {System.out.println("wrong date");}
 
-            } else {scanner.nextLine();}
-            System.out.println("wrong date");
+            } else {scanner.nextLine(); System.out.println("wrong date");}
+
 
         }
-
-
-
-
-
-
-
 
 
          class Zodiak {
@@ -67,6 +60,7 @@ public class Main {
              public Zodiak(int zdate, String zmonth) {
                  this.zdate = zdate;
                  this.zmonth = zmonth;
+                 findFL();
              }
 
              public void findFL() {
@@ -122,9 +116,14 @@ public class Main {
                      }
                  }
              }
-         }
+         }  //end zodiak
 
-
+          Zodiak zz=new Zodiak(date,month);
+          if (date >= Month.valueOf(month).dayToTransfer) {
+              System.out.println( "your zodiak is: " + zz.last);
+          } else {
+              System.out.println("your zodiak is: " + zz.first);
+          }
 
 
 
